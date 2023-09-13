@@ -7,7 +7,7 @@ Here's a table showing the improvements I did to make the application go faster.
 | Version | Time | Speedup | Memory (KB) | Changes |
 | :-----: | ---- | :-----: | :------: | ------- |
 | [01](01.cpp) | 32.91s | &mdash; | 1041128 | Initial version - no changes (only -pg) |
-| [02](01.cpp)| 2.59s | 4.12x | 1041332 | Compiled with -O3 & -pg to see time decrease |
+| [02](01.cpp)| 2.59s | 14.12x | 1041332 | Compiled with -O3 & -pg to see time decrease |
 | [03](03.cpp) | 3.67 | .99x| 1041844 | using reciprocals as compared to divisions
 
 ## Profiling Analysis
