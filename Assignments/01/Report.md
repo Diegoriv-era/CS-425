@@ -6,7 +6,7 @@ Here's a table showing the improvements I did to make the application go faster.
 
 | Version | Time | Speedup | Memory (KB) | Changes |
 | :-----: | ---- | :-----: | :------: | ------- |
-| [01](01.cpp) | 9.60s | &mdash; | 1041336 | Initial version - no changes |
+| [01](01.cpp) | 32.91s | &mdash; | 1041128 | Initial version - no changes (only -pg) |
 | [02](01.cpp)| 2.33s | 4.12x | 1041332 | Compiled with -O3 to see time decrease |
 | [03](03.cpp) | 3.67 | .99x| 1041844 | using reciprocals as compared to divisions
 
@@ -14,7 +14,7 @@ Here's a table showing the improvements I did to make the application go faster.
 
 ### Initial Review
 
-Looking at [01's profile](01.prof), the hottest function was `Transform::float4::perspectiveDivide() const`, which consumed around 28% of the program's execution time.  There's not a lot in that function, but it does three floating-point divisions, so perhaps that's something to try optimizing.
+Looking at [01's profile](01.prof), the hottest function was `Transform::float4::dot(Vertex const&) const`, which consumed around 21% of the program's execution time.  There's not a lot in that function, but it does three floating-point divisions, so perhaps that's something to try optimizing.
 
 ### Trying to make `perspectiveDivide()` go faster
 
