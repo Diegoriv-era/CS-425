@@ -16,7 +16,7 @@ Here's a table showing the improvements I did to make the application go faster.
 Looking at [01's profile](01.prof), the hottest function was `Transform::float4::dot(Vertex const&) const`, which consumed around 21% of the program's execution time. 
 
 ### Review Version 2
-Looking at [02's profile](02.prof), the hottest function was `Transform::float4::dot(Vertex const&) const`, which consumed around 21% of the program's execution time. 
+Looking at [02's profile](02.prof), the hottest function was `computePerimeter(Face const&, std::span<Vertex, 18446744073709551615ul> const&)`, which consumed around 80% of the program's execution time. 
 
 ### Review Version 3
 Looking at [03's profile](03.prof), the hottest function was `Transform::float4::dot(Vertex const&) const`, which consumed around 21% of the program's execution time. 
