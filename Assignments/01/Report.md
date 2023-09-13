@@ -13,7 +13,7 @@ Here's a table showing the improvements I did to make the application go faster.
 
 ## Profiling Analysis
 
-### Initial Review Version 2
+### Review Version 2
 Looking at [01's profile](01.prof), the hottest function was `Transform::float4::dot(Vertex const&) const`, which consumed around 21% of the program's execution time. 
 
 ### Review Version 3
