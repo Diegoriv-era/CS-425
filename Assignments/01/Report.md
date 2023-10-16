@@ -9,7 +9,7 @@ Here's a table showing the improvements I did to make the application go faster.
 | [01](01.cpp) | 9.73s  | &mdash; | 1041272     | Initial version - no changes                                      |
 | [02](01.cpp) | 32.91s | -3.38x  | 1041128     | Compiled with -pg                                                 |
 | [03](01.cpp) | 2.59s  | +3.76X  | 1041212     | Compiled with -O3 & -pg to see time decrease                      |
-| [04](03.cpp) | 2.52s  | +3.86X  | 1041212     | Compiled with -O3 & -pg & -funroll-all-loops to see time decrease |
+| [04](01.cpp) | 2.52s  | +3.86X  | 1041212     | Compiled with -O3 & -pg & -funroll-all-loops to see time decrease |
 
 ## Profiling Analysis
 
