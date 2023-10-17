@@ -14,6 +14,8 @@
 #include <iomanip>
 #include <iostream>
 #include <vector>
+#include <thread>
+
 
 #include "LychrelData.h"
 
@@ -44,24 +46,12 @@ int main() {
     // Iterate across all available data values, processing them using the 
     //   reverse-digits and sum technique described in class.
     size_t chunkSize = int(data.size() / MaxThreads + 1);
-    for (ID id = 0; id < MaxThreads; ++id) {
+    for (int id = 0; id < MaxThreads; ++id) {
         std::thread t{ [&,id]() {
-
         auto start = id * chunkSize;
         auto end = std::min(data.size(), start + chunkSize);
+        Number number;
             for(auto i = start; i < end; ++i) {
-            Number number = data[i];
-
-
-
-
-
-
-
-
-
-
-        for (auto i = 0; i < data.size(); ++i) {
             Number number = data[i];
             
             size_t iter = 0;
@@ -127,11 +117,16 @@ int main() {
             }
 
             records.push_back(record);
-        }
+        
 
 
             } // for (i)
         }}; // std::thread & lambda
+
+        id < MaxThreads-1 ? t.detach(): t.join();
+
+
+
     } // for (id)
     // Output our final results
     std::cout << "\nmaximum number of iterations = " << maxIter << "\n";
