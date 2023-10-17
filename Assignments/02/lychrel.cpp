@@ -51,8 +51,8 @@ int main() {
         auto start = id * chunkSize;
         auto end = std::min(data.size(), start + chunkSize);
         Number number;
-            for(auto i = start; i < end; ++i) {
-            Number number = data[i];
+        while (data.getNext(number)){
+            // Number number = data[];
             
             size_t iter = 0;
             Number n = number;
@@ -120,7 +120,7 @@ int main() {
         
 
 
-            } // for (i)
+            } // for (i) which is now while loop
         }}; // std::thread & lambda
 
         id < MaxThreads-1 ? t.detach(): t.join();
